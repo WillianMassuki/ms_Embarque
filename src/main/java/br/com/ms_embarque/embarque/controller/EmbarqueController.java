@@ -1,8 +1,7 @@
 package br.com.ms_embarque.embarque.controller;
 
-import br.com.sistemasga.gestao.embarque.dtos.CartaoDTO;
-import br.com.sistemasga.gestao.embarque.dtos.EmbarqueRequestDTO;
-import br.com.sistemasga.gestao.embarque.service.EmbarqueService;
+import br.com.ms_embarque.embarque.dtos.EmbarqueRequestDTO;
+import br.com.ms_embarque.embarque.service.EmbarqueService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +15,7 @@ public class EmbarqueController {
         this.service = service;
     }
 
+    /*
     @PostMapping("/iniciar")
     public ResponseEntity<Void> iniciar(@RequestBody EmbarqueRequestDTO dto) {
         service.iniciarEmbarque(dto.vooId());
@@ -33,4 +33,6 @@ public class EmbarqueController {
         service.encerrar(vooId);
         return ResponseEntity.ok().build();
     }
+    
+     */
 }

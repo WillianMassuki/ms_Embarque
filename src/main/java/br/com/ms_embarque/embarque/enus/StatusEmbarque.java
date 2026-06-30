@@ -1,4 +1,4 @@
-package br.com.sistemasga.gestao.embarque.enus;
+package  br.com.ms_embarque.embarque.enus;
 
 public enum StatusEmbarque {
     NAO_INICIADO,

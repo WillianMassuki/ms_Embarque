@@ -4,6 +4,8 @@ import br.com.sistemasga.gestao.embarque.enus.StatusEmbarque;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Entity
 @Data
 public class Embarque {
@@ -11,8 +13,7 @@ public class Embarque {
     @GeneratedValue
     private Long id;
 
-    @OneToOne
-    private Voo voo;
+    private UUID voo;
 
     @Enumerated(EnumType.STRING)
     private StatusEmbarque status;

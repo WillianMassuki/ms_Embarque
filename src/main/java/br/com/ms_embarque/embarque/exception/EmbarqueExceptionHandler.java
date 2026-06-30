@@ -1,4 +1,4 @@
-package br.com.sistemasga.gestao.embarque.exception;
+package  br.com.ms_embarque.embarque.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

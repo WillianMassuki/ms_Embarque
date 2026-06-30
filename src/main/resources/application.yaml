@@ -1,3 +1,21 @@
 spring:
   application:
     name: ms_Embarque
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ciaarea
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always

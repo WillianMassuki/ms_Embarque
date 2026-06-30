@@ -3,20 +3,20 @@ package br.com.ms_embarque.embarque.model;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Entity
 public class CartaoEmbarque {
     @Id
     @GeneratedValue
     private Long id;
+
     private String codigo;
 
-    @ManyToOne
-    private Passageiro passageiro;
+    private UUID passageiro;
 
-    @ManyToOne
-    private Voo voo;
+    private UUID voo;
 
-    @OneToOne
-    private CheckIn checkIn;
+    private UUID checkIn;
 
 }

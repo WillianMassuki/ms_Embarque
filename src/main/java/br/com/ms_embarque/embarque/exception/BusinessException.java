@@ -1,4 +1,4 @@
-package br.com.sistemasga.gestao.embarque.exception;
+package br.com.ms_embarque.embarque.exception;
 
 public class BusinessException extends RuntimeException {
     public BusinessException(String msg) {
