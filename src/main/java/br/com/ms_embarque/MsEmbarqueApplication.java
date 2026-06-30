@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MsEmbarqueApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(MsEmbarqueApplication.class, args);
     }

@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+
+  postgres_embarque:
+    image: postgres:17
+    container_name: postgres_embarque
+
+    restart: always
+
+    environment:
+      POSTGRES_DB: embarque
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_embarque_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d embarque"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ms_embarque:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: ms_embarque
+
+    restart: always
+
+    depends_on:
+      postgres_embarque:
+        condition: service_healthy
+
+    ports:
+      - "8084:8080"
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_embarque:5432/embarque
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+
+volumes:
+  postgres_embarque_data:

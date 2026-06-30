@@ -1,9 +1,8 @@
 package br.com.ms_embarque.embarque.controller;
 
-import br.com.ms_embarque.embarque.dtos.EmbarqueRequestDTO;
 import br.com.ms_embarque.embarque.service.EmbarqueService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/embarque")
@@ -33,6 +32,6 @@ public class EmbarqueController {
         service.encerrar(vooId);
         return ResponseEntity.ok().build();
     }
-    
+
      */
 }

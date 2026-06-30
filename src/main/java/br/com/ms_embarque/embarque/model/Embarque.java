@@ -1,13 +1,11 @@
 package br.com.ms_embarque.embarque.model;
 
-import br.com.sistemasga.gestao.embarque.enus.StatusEmbarque;
+import br.com.ms_embarque.embarque.enus.StatusEmbarque;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.UUID;
 
 @Entity
-@Data
 public class Embarque {
     @Id
     @GeneratedValue
@@ -17,4 +15,28 @@ public class Embarque {
 
     @Enumerated(EnumType.STRING)
     private StatusEmbarque status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public UUID getVoo() {
+        return voo;
+    }
+
+    public void setVoo(UUID voo) {
+        this.voo = voo;
+    }
+
+    public StatusEmbarque getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEmbarque status) {
+        this.status = status;
+    }
 }
